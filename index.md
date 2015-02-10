@@ -64,34 +64,32 @@ the development group now responsible for the continued support, development,
 and evolution of **HTML Tidy**, the venerable command line application and
 library that cleans, diagnoses, and pretty-prints your HTML.
 
-Since its early development and release by
-[Dave Raggett](http://www.w3.org/People/Raggett/), **HTML Tidy** has matured and
-become the de facto, go-to tool for HTML diagnosis and pretty printing. HTACG is
-charged with ensuring its continued legacy.
+Since its early development and release by [Dave Raggett][1], **HTML Tidy** has
+matured and become the de facto, go-to tool for HTML diagnosis and pretty
+printing. HTACG is charged with ensuring its continued legacy.
 
 Please feel free to join the community and participate in HTACG’s future. You
-can discover more at our
-[W3C Community Group](http://www.w3.org/community/htacg/) page.
+can discover more at our [W3C Community Group][2] page.
 
 
 FAQs
 ----
 
-### Where can a get a copy of HTML Tidy?
+### Where can I get a copy of HTML Tidy?
 
 It’s probable that you already have an outdated version of **HTML Tidy**. It
 comes pre-installed on Mac OS X and many distributions of GNU/Linux and other
 UNIX-type operating systems.
 
-Visit [HTML Tidy’s own website](http://www.html-tidy.org) or access the source
-code on our [Github repository](https://github.com/htacg/tidy-html5) for more
-up-to-date versions.
+Visit [HTML Tidy’s own website][3] or access the source code on our
+[Github repository](4) for more up-to-date versions.
 
 
 ### Where can I learn more about HTML Tidy?
 
-Visit [HTML Tidy’s own website](http://www.html-tidy.org) or access the source
-code on our [Github repository](https://github.com/htacg/tidy-html5).
+Visit [HTML Tidy’s own website][3] or access the source code on our
+[Github repository][4]. You can also learn a lot more background on Tidy’s
+history at [tidy.sourceforge.net][5] and [Dave Ragetts’s original page][1].
 
 
 ### How do you pronounce your acronym?
@@ -99,7 +97,11 @@ code on our [Github repository](https://github.com/htacg/tidy-html5).
 You can pronounce the individual letters in your native language, although it
 seems easier to pronounce it like “H-Task.”
 
-
+[1]: http://www.w3.org/People/Raggett/
+[2]: http://www.w3.org/community/htacg/
+[3]: http://www.html-tidy.org
+[4]: https://github.com/htacg/tidy-html5
+[5]: https://github.com/htacg/tidy-html5
 
 
 </div>
