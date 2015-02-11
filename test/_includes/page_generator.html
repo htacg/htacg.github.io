@@ -1,4 +1,3 @@
-<br />
 {% for post in site.categories[page.category] reversed %}
 {% capture id %}{{ post.id | remove:'/' | downcase }}{% endcapture %}
 <div id="{{id}}" class="section p-{{id}}">

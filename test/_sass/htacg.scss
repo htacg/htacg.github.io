@@ -1,0 +1,43 @@
+
+/*
+	big bright boxes that often have images
+ */
+.page-lead
+{
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	text-align: center;
+
+	div
+	{
+		padding: 1em;
+
+		h1
+		{
+			//@include font-size(48);
+		}
+		h2
+		{
+			//@include font-size(20);
+		}
+	}
+}
+
+
+/*
+	page-specific styles
+*/
+
+.page-lead .homepage
+{
+	background: darkred url(/assets/images/red-grunge-background.jpg);
+	h1,
+	h2
+	{
+		//@include stroke(1px, darkred);
+		color: white;
+	}
+}
+

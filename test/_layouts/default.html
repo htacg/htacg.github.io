@@ -6,7 +6,8 @@
   <title>{{ page.title || site.title }}</title>
 	<meta name="keywords" content="{{ site.keywords }}">
 	<meta name="description" content="{{ site.description }}">
-  <link rel="stylesheet" href="../assets/stylesheets/combo.css">
+  <link rel="stylesheet" href="../assets/stylesheets/base.css">
+    <link rel="stylesheet" href="../assets/stylesheets/site.css">
   <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -17,10 +18,10 @@
   <div id="main">
 
     <nav><ul>
-      {% for node in site.posts reversed %}
+        {% for node in site.categories[page.category] reversed %}
         {% capture id %}{{ node.id | remove:'/' | downcase }}{% endcapture %}
         <li class="p-{{id}}"><a href="#{{id}}">{{node.title}}</a></li>
-      {% endfor %}
+        {% endfor %}
     </ul></nav>
 
 
