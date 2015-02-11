@@ -1,80 +1,43 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>{% if page.title %}{{ page.title }} • {% endif %}{{ site.title }}</title>
-    {% if page.excerpt %}<meta name="description" content="{{ page.excerpt | strip_html }}">{% endif %}
-    {% if page.tags %}<meta name="keywords" content="{{ page.tags | join: ', ' }}">{% endif %}
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
-    <link href="{{ site.url }}/sitemap.xml" type="application/xml" rel="sitemap" title="Sitemap">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="cleartype" content="on">
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title || site.title }}</title>
+	<meta name="keywords" content="{{ site.keywords }}">
+	<meta name="description" content="{{ site.description }}">
+  <link rel="stylesheet" href="../assets/stylesheets/base.css">
+    <link rel="stylesheet" href="../assets/stylesheets/site.css">
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  {% if site.favicon %}<link rel="shortcut icon" href="{{ site.favicon }}" type="image/x-icon">{% endif %}
+	{% if site.touch_icon %}<link rel="apple-touch-icon" href="{{ site.touch_icon }}">{% endif %}
+</head>
+<body>
+  <div id="main">
 
-    <style>
-    .sliding-menu-content {
-      top: 0;
-      right: 0;
-      text-align: center;
-      visibility: hidden;
-      height: 100%;
-      width: 100%;
-      -webkit-transform: translateX(100%);
-      -moz-transform: translateX(100%);
-      -ms-transform: translateX(100%);
-      -o-transform: translateX(100%);
-      transform: translateX(100%);
-    }
-    </style>
+    <nav><ul>
+        {% for node in site.categories[page.category] reversed %}
+        {% capture id %}{{ node.id | remove:'/' | downcase }}{% endcapture %}
+        <li class="p-{{id}}"><a href="#{{id}}">{{node.title}}</a></li>
+        {% endfor %}
+    </ul></nav>
 
-    <!-- HTML5 Shiv and Media Query Support for IE -->
-    <!--[if lt IE 9]>
-      <script src="{{ site.baseurl }}/assets/javascripts/vendor/html5shiv.min.js"></script>
-      <script src="{{ site.baseurl }}/assets/javascripts/vendor/respond.min.js"></script>
-    <![endif]-->
 
-  </head>
+    {{ content }}
 
-  <body>
-    {% include header.html %}
-    {% include navigation-sliding.html %}
 
-    <div id="page-wrapper">
-      {% include browser-upgrade.html %}
-
-      {{ content }}
-
-      {% include footer.html %}
+    <div id="footer" class="section text-white">
+      <div class="container">
+        {% capture foottext %} {% include footer.md %} {% endcapture %}
+        {{ foottext | markdownify }}
+      </div>
     </div>
+  </div>
 
-    <script src="{{ sitebase.url }}/assets/javascripts/vendor/jquery-1.9.1.min.js"></script>
-    <script src="{{ sitebase.url }}/assets/javascripts/main.js"></script>
-    
-    {% if page.toc == true %}
-    <script type="text/javascript">
-      $('.toc').toc({
-        'selectors': 'h2', //elements to use as headings
-        'container': '.page-content', //element to find all selectors in
-        'smoothScrolling': true, //enable or disable smooth scrolling on click
-        'prefix': 'toc', //prefix for anchor tags and class names
-        'onHighlight': function(el) {}, //called when a new section is highlighted 
-        'highlightOnScroll': true, //add class to heading that is currently in focus
-        'highlightOffset': 100, //offset to trigger the next headline
-        'anchorName': function(i, heading, prefix) { //custom function for anchor name
-          return prefix+i;
-        },
-        'headerText': function(i, heading, $heading) { //custom function building the header-item text
-          return $heading.text();
-        },
-        'itemClass': function(i, heading, $heading, prefix) { //custom function for item class
-          return $heading[0].tagName.toLowerCase();
-        }
-      });
-    </script>
-    {% endif %}
-
-  </body>
-
+{% include analytics.html %}
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="../assets/javascript/site.js"></script>
 </html>
