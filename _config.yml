@@ -8,11 +8,9 @@ safe: true
 ### site serving configuration ###
 baseurl: http://www.htacg.org
 exclude: [CNAME, README.md, .gitignore]
-permalink: / ## disables post output
+#permalink: / ## disables post output
 timezone: null
 lsi: false
-markdown: kramdown
-highlighter: pygments
 
 
 ### content configuration ###
@@ -56,6 +54,6 @@ defaults:
 source:      .
 destination: ./_site
 #plugins:     ./_plugins
-layouts:     ./_layouts
+layouts_dir: ./_layouts
 #data_source: ./_data
 #collections: null
