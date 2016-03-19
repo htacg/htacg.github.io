@@ -87,11 +87,19 @@
 .page-lead.home
 {
 	background: darkred url(../images/red-grunge-background.jpg);
+	//background-size: 100% auto;
 	h1,
 	h2
 	{
 		//@include stroke(1px, darkred);
 		color: white;
 	}
+		div
+	{
+	  background-image: url(../images/htacg-logo.svg);
+	  background-repeat: no-repeat;
+	  background-size: auto 35%;
+	}
+
 }
 
